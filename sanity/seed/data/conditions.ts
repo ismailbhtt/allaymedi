@@ -91,8 +91,6 @@ export const conditions = [
       { _ref: "faq-insurance-rental", _type: "reference", _key: "f3" },
     ],
     recommendedProducts: [
-      { _ref: "product-knee-scooter-rental", _type: "reference", _key: "r1" },
-      { _ref: "product-hospital-bed-rental", _type: "reference", _key: "r2" },
       { _ref: "product-transport-wheelchair", _type: "reference", _key: "r3" },
       { _ref: "product-shower-bench", _type: "reference", _key: "r4" },
     ],

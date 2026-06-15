@@ -47,6 +47,10 @@ export default async function ConditionPage(
   const fallback = NAV.conditions.find((c) => c.href === `/conditions/${slug}`);
   if (!doc && !fallback) notFound();
 
+  // Filter out any references that didn't resolve (e.g. a product removed in
+  // the CMS) so a dangling ref can't crash the render.
+  const recommendedProducts = (doc?.recommendedProducts ?? []).filter(Boolean);
+
   const name = doc?.name ?? fallback!.label;
   const headline = doc?.heroHeadline ?? name;
   const intro =
@@ -94,11 +98,11 @@ export default async function ConditionPage(
 
       {slug === "sleep-apnea" ? <BookingCTA /> : null}
 
-      {doc?.recommendedProducts && doc.recommendedProducts.length > 0 ? (
+      {recommendedProducts.length > 0 ? (
         <section className="container-page py-16">
           <h2 className="mb-8">What you&apos;ll need</h2>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {doc.recommendedProducts.map((p) => (
+            {recommendedProducts.map((p) => (
               <li key={p._id}>
                 <ProductCard product={p} />
               </li>
