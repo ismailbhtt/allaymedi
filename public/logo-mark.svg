@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Allay">
+  <title>Allay</title>
+  <defs>
+    <linearGradient id="allayMark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D08E5E"/>
+      <stop offset="1" stop-color="#A75A2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0F2F4E"/>
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Fraunces, Georgia, serif" font-weight="500" font-size="34" fill="#FAF6F1"
+        letter-spacing="-0.02em">A</text>
+  <circle cx="46" cy="44" r="3.8" fill="url(#allayMark)"/>
+</svg>

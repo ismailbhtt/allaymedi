@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Brand — Allay: warm-clinical. Deep navy + warm copper, cream surfaces. */
+  --color-ink: oklch(0.22 0.04 250);
+  --color-ink-soft: oklch(0.38 0.035 250);
+  --color-muted: oklch(0.55 0.02 250);
+  --color-surface: oklch(1 0 0);
+  --color-surface-warm: oklch(0.985 0.008 70);
+  --color-surface-cool: oklch(0.97 0.012 240);
+  --color-border: oklch(0.9 0.012 240);
+  --color-border-strong: oklch(0.82 0.015 240);
+
+  --color-navy-50: oklch(0.97 0.012 240);
+  --color-navy-100: oklch(0.93 0.02 240);
+  --color-navy-200: oklch(0.85 0.035 240);
+  --color-navy-300: oklch(0.72 0.05 240);
+  --color-navy-400: oklch(0.55 0.065 245);
+  --color-navy-500: oklch(0.42 0.075 248);
+  --color-navy-600: oklch(0.33 0.07 250);
+  --color-navy-700: oklch(0.26 0.06 252);
+  --color-navy-800: oklch(0.2 0.05 252);
+  --color-navy-900: oklch(0.15 0.04 252);
+
+  --color-copper-50: oklch(0.97 0.015 55);
+  --color-copper-100: oklch(0.93 0.035 55);
+  --color-copper-200: oklch(0.87 0.06 55);
+  --color-copper-300: oklch(0.78 0.09 50);
+  --color-copper-400: oklch(0.7 0.12 45);
+  --color-copper-500: oklch(0.62 0.13 42);
+  --color-copper-600: oklch(0.54 0.12 38);
+  --color-copper-700: oklch(0.46 0.1 35);
+  --color-copper-800: oklch(0.38 0.08 32);
+  --color-copper-900: oklch(0.3 0.06 30);
+
+  --color-sage-50: oklch(0.97 0.015 160);
+  --color-sage-500: oklch(0.62 0.08 160);
+  --color-sage-700: oklch(0.42 0.07 162);
+
+  --color-success: oklch(0.62 0.12 150);
+  --color-warning: oklch(0.78 0.14 75);
+  --color-danger: oklch(0.58 0.18 25);
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  /* Radius + motion */
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  --shadow-card: 0 1px 2px oklch(0.22 0.04 250 / 0.04), 0 8px 24px oklch(0.22 0.04 250 / 0.06);
+  --shadow-cta: 0 6px 16px oklch(0.42 0.075 248 / 0.24);
+}
+
+:root {
+  --background: var(--color-surface);
+  --foreground: var(--color-ink);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem; /* 17px base — readable for 55+ audience */
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.05; }
+  h2 { font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.15; }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.25; }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-copper-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .prose-editorial {
+    max-width: 68ch;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-ink-soft);
+  }
+
+  .prose-editorial h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .prose-editorial h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .prose-editorial p + p {
+    margin-top: 1rem;
+  }
+
+  .prose-editorial ul,
+  .prose-editorial ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-inline-start: 1.5rem;
+  }
+
+  .prose-editorial ul {
+    list-style: disc;
+  }
+
+  .prose-editorial ol {
+    list-style: decimal;
+  }
+
+  .prose-editorial li {
+    margin-top: 0.4rem;
+    padding-inline-start: 0.25rem;
+  }
+
+  .prose-editorial li::marker {
+    color: var(--color-copper-500);
+  }
+
+  .prose-editorial strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .prose-editorial a {
+    color: var(--color-navy-700);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose-editorial a:hover {
+    color: var(--color-copper-700);
+  }
+}

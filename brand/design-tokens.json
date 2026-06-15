@@ -1,0 +1,113 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Allay Medical Solutions — core design tokens in W3C Design Tokens format. Importable into Figma via the Tokens Studio plugin.",
+  "color": {
+    "ink": {
+      "$type": "color",
+      "$value": "oklch(0.22 0.04 250)",
+      "$description": "Primary text color"
+    },
+    "ink-soft": {
+      "$type": "color",
+      "$value": "oklch(0.38 0.035 250)"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "oklch(0.55 0.02 250)"
+    },
+    "surface": {
+      "default": { "$type": "color", "$value": "#FFFFFF" },
+      "warm": { "$type": "color", "$value": "oklch(0.985 0.008 70)" },
+      "cool": { "$type": "color", "$value": "oklch(0.97 0.012 240)" }
+    },
+    "navy": {
+      "50": { "$type": "color", "$value": "oklch(0.97 0.012 240)" },
+      "100": { "$type": "color", "$value": "oklch(0.93 0.02 240)" },
+      "200": { "$type": "color", "$value": "oklch(0.85 0.035 240)" },
+      "300": { "$type": "color", "$value": "oklch(0.72 0.05 240)" },
+      "400": { "$type": "color", "$value": "oklch(0.55 0.065 245)" },
+      "500": { "$type": "color", "$value": "oklch(0.42 0.075 248)" },
+      "600": { "$type": "color", "$value": "oklch(0.33 0.07 250)" },
+      "700": { "$type": "color", "$value": "oklch(0.26 0.06 252)", "$description": "Primary CTA base" },
+      "800": { "$type": "color", "$value": "oklch(0.2 0.05 252)" },
+      "900": { "$type": "color", "$value": "oklch(0.15 0.04 252)", "$description": "Footer background" }
+    },
+    "copper": {
+      "50": { "$type": "color", "$value": "oklch(0.97 0.015 55)" },
+      "100": { "$type": "color", "$value": "oklch(0.93 0.035 55)" },
+      "200": { "$type": "color", "$value": "oklch(0.87 0.06 55)" },
+      "300": { "$type": "color", "$value": "oklch(0.78 0.09 50)" },
+      "400": { "$type": "color", "$value": "oklch(0.7 0.12 45)" },
+      "500": { "$type": "color", "$value": "oklch(0.62 0.13 42)", "$description": "Accent, focus rings" },
+      "600": { "$type": "color", "$value": "oklch(0.54 0.12 38)", "$description": "Secondary CTA" },
+      "700": { "$type": "color", "$value": "oklch(0.46 0.1 35)" },
+      "800": { "$type": "color", "$value": "oklch(0.38 0.08 32)" },
+      "900": { "$type": "color", "$value": "oklch(0.3 0.06 30)" }
+    },
+    "sage": {
+      "50": { "$type": "color", "$value": "oklch(0.97 0.015 160)" },
+      "500": { "$type": "color", "$value": "oklch(0.62 0.08 160)" },
+      "700": { "$type": "color", "$value": "oklch(0.42 0.07 162)", "$description": "Success / rental badge" }
+    },
+    "status": {
+      "success": { "$type": "color", "$value": "oklch(0.62 0.12 150)" },
+      "warning": { "$type": "color", "$value": "oklch(0.78 0.14 75)" },
+      "danger": { "$type": "color", "$value": "oklch(0.58 0.18 25)" }
+    }
+  },
+  "font-family": {
+    "sans": {
+      "$type": "fontFamily",
+      "$value": ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      "$description": "UI + body copy"
+    },
+    "display": {
+      "$type": "fontFamily",
+      "$value": ["Fraunces", "ui-serif", "Georgia", "serif"],
+      "$description": "Headlines, editorial accents"
+    }
+  },
+  "font-size": {
+    "body": { "$type": "dimension", "$value": "1.0625rem", "$description": "17px — readable for 55+ audience" },
+    "h1": { "$type": "dimension", "$value": "clamp(2rem, 4.5vw, 3.5rem)" },
+    "h2": { "$type": "dimension", "$value": "clamp(1.625rem, 3vw, 2.5rem)" },
+    "h3": { "$type": "dimension", "$value": "clamp(1.25rem, 2vw, 1.75rem)" }
+  },
+  "line-height": {
+    "body": { "$type": "number", "$value": 1.65 },
+    "heading": { "$type": "number", "$value": 1.1 },
+    "editorial": { "$type": "number", "$value": 1.75 }
+  },
+  "radius": {
+    "md": { "$type": "dimension", "$value": "10px" },
+    "lg": { "$type": "dimension", "$value": "14px" },
+    "xl": { "$type": "dimension", "$value": "20px" },
+    "2xl": { "$type": "dimension", "$value": "28px" },
+    "full": { "$type": "dimension", "$value": "9999px" }
+  },
+  "shadow": {
+    "card": {
+      "$type": "shadow",
+      "$value": [
+        { "offsetX": "0", "offsetY": "1px", "blur": "2px", "spread": "0", "color": "oklch(0.22 0.04 250 / 0.04)" },
+        { "offsetX": "0", "offsetY": "8px", "blur": "24px", "spread": "0", "color": "oklch(0.22 0.04 250 / 0.06)" }
+      ]
+    },
+    "cta": {
+      "$type": "shadow",
+      "$value": [
+        { "offsetX": "0", "offsetY": "6px", "blur": "16px", "spread": "0", "color": "oklch(0.42 0.075 248 / 0.24)" }
+      ]
+    }
+  },
+  "spacing": {
+    "xs": { "$type": "dimension", "$value": "0.25rem" },
+    "sm": { "$type": "dimension", "$value": "0.5rem" },
+    "md": { "$type": "dimension", "$value": "1rem" },
+    "lg": { "$type": "dimension", "$value": "1.5rem" },
+    "xl": { "$type": "dimension", "$value": "2rem" },
+    "2xl": { "$type": "dimension", "$value": "3rem" },
+    "3xl": { "$type": "dimension", "$value": "4rem" },
+    "section": { "$type": "dimension", "$value": "5rem" }
+  }
+}
