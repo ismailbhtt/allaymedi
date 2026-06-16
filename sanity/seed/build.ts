@@ -6,7 +6,9 @@ import { categories } from "./data/categories";
 import { locations } from "./data/locations";
 import { conditions } from "./data/conditions";
 import { products } from "./data/products";
+import { productsExtra } from "./data/products-extra";
 import { rentalEquipment } from "./data/rentals";
+import { rentalEquipmentExtra } from "./data/rentals-extra";
 import { services } from "./data/services";
 import { testimonials } from "./data/testimonials";
 import { faqs } from "./data/faqs";
@@ -23,7 +25,9 @@ const documents: unknown[] = [
   ...locations,
   ...conditions,
   ...products,
+  ...productsExtra,
   ...rentalEquipment,
+  ...rentalEquipmentExtra,
   ...services,
   ...testimonials,
   ...blogPosts,
