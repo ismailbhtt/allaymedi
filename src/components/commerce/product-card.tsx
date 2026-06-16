@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ProductSummary } from "@/sanity/fetch";
 import { Badge } from "@/components/ui/badge";
 import { SanityImageRender } from "@/components/sanity/sanity-image";
+import { ProductPlaceholder } from "@/components/commerce/product-placeholder";
 import { formatPrice } from "@/lib/utils";
 
 export function ProductCard({
@@ -30,7 +31,12 @@ export function ProductCard({
             sizes="(max-width: 768px) 50vw, 25vw"
             className="object-cover transition-transform group-hover:scale-[1.03]"
           />
-        ) : null}
+        ) : (
+          <ProductPlaceholder
+            categorySlug={slug}
+            className="absolute inset-0 transition-transform group-hover:scale-[1.03]"
+          />
+        )}
         <div className="absolute left-3 top-3 flex flex-col gap-1.5">
           {product.fsaEligible ? <Badge tone="copper">FSA/HSA</Badge> : null}
           {product.rentalAvailable ? <Badge tone="sage">Rent it</Badge> : null}

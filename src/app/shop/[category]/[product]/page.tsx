@@ -6,6 +6,7 @@ import { Phone, ShieldCheck, Store, Truck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/commerce/product-card";
+import { ProductPlaceholder } from "@/components/commerce/product-placeholder";
 import { AddToCartButton } from "@/components/commerce/add-to-cart-button";
 import { PortableText } from "@/components/sanity/portable-text";
 import { SanityImageRender } from "@/components/sanity/sanity-image";
@@ -91,7 +92,9 @@ export default async function ProductPage(
             <div className="relative aspect-square overflow-hidden rounded-[var(--radius-xl)] bg-[var(--color-surface-cool)]">
               {heroImage ? (
                 <SanityImageRender image={heroImage} fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-6" />
-              ) : null}
+              ) : (
+                <ProductPlaceholder categorySlug={category} className="absolute inset-0" />
+              )}
             </div>
             {doc.images && doc.images.length > 1 ? (
               <ul className="grid grid-cols-4 gap-3">
